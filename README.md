@@ -1,29 +1,43 @@
 # Resume-Parser
 Find best suited candidate for a job using AI
 
-# Features:
+# Resume Parser
+This repository contains a Python code implementation of a basic resume parser using NLTK (Natural Language Toolkit) in Jupyter Notebook. The resume parser analyzes the content of multiple resume files in DOCX format and identifies the most suitable candidate for a job based on keyword matching.
 
-Utilizes the edit distance metric to calculate the similarity between words
-Uses a comprehensive English dictionary to find the closest match
-Provides a simple and user-friendly command-line interface for testing
-Code Overview:
+# Features
+Loads resume data from DOCX files.
+Preprocesses the resume text by tokenizing and removing stopwords.
+Calculates the word frequency distribution of the cleaned tokens.
+Compares the keyword frequency in the resume with a list of predefined keywords.
+Ranks the resumes based on the keyword matching score and identifies the most suitable candidate.
 
-# Installation:
-The code begins with the installation of the necessary dependencies, including the NLTK library.
+# Installation
+1. Clone the repository:
+git clone https://github.com/your-username/resume-parser.git
 
-Loading the English Dictionary: The code downloads and loads the English dictionary from the NLTK corpus, ensuring a wide range of words for comparison.
+2. nstall the required libraries:
+pip install nltk python-docx
 
-Finding the Closest Word: The find_closest_word() function implements the core logic of the auto-correct tool. It iterates over the English dictionary, calculating the edit distance between the misspelled word and each word in the dictionary. It updates the closest word if a smaller distance is found.
+# Usage
+Place the resume files (in DOCX format) in the same directory as the Jupyter Notebook file.
 
-Testing the Tool: The code prompts the user to enter a word and then calls the find_closest_word() function to obtain the autocorrected word. The result is printed on the console.
+Open the Jupyter Notebook (resume_parser.ipynb) and run the code cells.
 
-# Usage:
-To use this auto-correct tool, simply run the script and follow the instructions on the command line. Enter a word, and the tool will provide the closest corrected word based on the English dictionary.
+Modify the keywords list in the code to match your desired keywords for candidate evaluation.
 
-# Contributing:
-Contributions to this project are welcome! If you have any suggestions, improvements, or bug fixes, feel free to submit a pull request. Let's collaborate and enhance the functionality and performance of this auto-correct tool together.
+The code will process the resumes, calculate the relevance scores, and identify the most suitable candidate based on the keyword matching.
 
-# License:
-This project is released under the [insert license name] license. Please refer to the LICENSE file for more details.
+# Examples
+The repository includes sample resume files (resume1.docx, resume2.docx, resume3.docx) for testing and demonstration purposes. Feel free to replace them with your own resume files.
 
-We hope you find this project insightful and informative. Don't hesitate to explore the code and experiment with different functionalities. If you have any questions or feedback, feel free to reach out. Happy coding!
+# License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+# Acknowledgments
+The code in this repository is a basic implementation of a resume parser and serves as a starting point for more advanced resume parsing and analysis tasks.
+
+# Contributions
+Contributions to this project are welcome. If you find any issues or want to add new features, please create a pull request.
+
+# Disclaimer
+Please note that this code provides a basic resume parsing functionality and may require customization and further development to meet specific use cases and handle complex resume formats. Test the code thoroughly and adapt it according to your requirements.

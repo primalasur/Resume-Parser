@@ -33,7 +33,7 @@ def compare_keywords(resume_fdist, keywords):
 keywords = ['python', 'machine learning', 'data analysis']
 
 # Load and preprocess resumes
-resume_files = ['/content/drive/MyDrive/neha.docx', '/content/drive/MyDrive/priya.docx', '/content/drive/MyDrive/ravi.docx']
+resume_files = ['resume1', 'resume2', 'resume3',]
 resumes = []
 
 for resume_file in resume_files:

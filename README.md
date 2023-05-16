@@ -1,6 +1,3 @@
-# Resume-Parser
-Find best suited candidate for a job using AI
-
 # Resume Parser
 This repository contains a Python code implementation of a basic resume parser using NLTK (Natural Language Toolkit) in Jupyter Notebook. The resume parser analyzes the content of multiple resume files in DOCX format and identifies the most suitable candidate for a job based on keyword matching.
 

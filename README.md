@@ -10,15 +10,15 @@ Ranks the resumes based on the keyword matching score and identifies the most su
 
 # Installation
 1. Clone the repository:
-git clone https://github.com/your-username/resume-parser.git
+git clone https://github.com/primalsur/Resume-Parser.git
 
-2. nstall the required libraries:
+2. Install the required libraries:
 pip install nltk python-docx
 
 # Usage
 Place the resume files (in DOCX format) in the same directory as the Jupyter Notebook file.
 
-Open the Jupyter Notebook (resume_parser.ipynb) and run the code cells.
+Open your Jupyter Notebook and run the code cells.
 
 Modify the keywords list in the code to match your desired keywords for candidate evaluation.
 

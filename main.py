@@ -1,6 +1,8 @@
+# installing libraries
 !pip install nltk python-docx
 import docx
 import nltk
+import glob
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -21,19 +23,30 @@ def preprocess_resume(resume_text):
     stop_words = set(stopwords.words('english'))
     cleaned_tokens = [token for token in tokens if token.isalnum() and token not in stop_words]
     return cleaned_tokens
+
 def calculate_word_frequency(cleaned_tokens):
     fdist = FreqDist(cleaned_tokens)
     return fdist
+
 def compare_keywords(resume_fdist, keywords):
     score = 0
     for keyword in keywords:
         score += resume_fdist[keyword]
     return score
+
 # Set the keywords to match
 keywords = ['python', 'machine learning', 'data analysis']
 
-# Load and preprocess resumes
-resume_files = ['resume1', 'resume2', 'resume3',]
+# Specify the directory path where the resumes are stored
+resume_directory = '/content/drive/MyDrive/resumes/'
+
+# ...
+
+# Retrieve all the .docx files from the directory
+resume_files = glob.glob(resume_directory + '*.docx')
+
+print("Found {} resume files.".format(len(resume_files)))  # Debug statement
+
 resumes = []
 
 for resume_file in resume_files:
@@ -43,9 +56,16 @@ for resume_file in resume_files:
     score = compare_keywords(resume_fdist, keywords)
     resumes.append((resume_file, score))
 
+# Print the resumes for debugging
+for resume in resumes:
+    print("Resume: {}, Score: {}".format(resume[0], resume[1]))
+
 # Sort resumes based on the score
 resumes.sort(key=lambda x: x[1], reverse=True)
 
 # Print the most suitable candidate
-print("Most Suitable Candidate:")
-print(resumes[0][0])
+if resumes:
+    print("Most Suitable Candidate:")
+    print(resumes[0][0])
+else:
+    print("No suitable candidate found.")
